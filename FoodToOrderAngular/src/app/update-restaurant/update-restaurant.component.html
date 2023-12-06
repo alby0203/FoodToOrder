@@ -1,0 +1,148 @@
+
+
+<div>
+    <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            
+          <form [formGroup]="firstFormGroup" (ngSubmit)="saveFirstStepData(firstFormGroup)">
+            
+            <label class="form-label" for="id"> Select a user for Update:</label>
+            <select class="form-select" id="id" formControlName="rest_id" (change)="onChangeType($event)">
+                <option selected>Select a value</option>
+                <option *ngFor="let u of arrRest" [ngValue]="u.id">{{u.name}}</option>
+            </select>
+            
+            
+            <ng-template matStepLabel>Fill out your name and image</ng-template>
+            <mat-form-field class="m-3">
+              <mat-label>Restaurant Name</mat-label>
+              <input matInput formControlName="firstCtrlname" required>
+            </mat-form-field>
+            <mat-form-field class="m-3">
+                <mat-label>Image Source</mat-label>
+                <input matInput formControlName="firstCtrlimage" required>
+              </mat-form-field>
+              <div>
+                <button cmat-raised-button class="btn btn-primary" type="submit">Save</button>
+                <button mat-button matStepperNext class="m-3">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+
+        <mat-step [stepControl]="addressForm" label="Fill out your address">
+            <form [formGroup]="addressForm" (ngSubmit)="saveSecondStepData(addressForm.value)">
+              <div formArrayName="form_array_addresses">
+                  <div class="row" *ngFor="let restaurant of form_array_addresses().controls;let i=index"
+                  [formGroupName]="i">
+                  <mat-form-field class="col-4">
+                      <input matInput formControlName="houseno" placeholder="House Number"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="street" placeholder="street Number"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="area" placeholder="Area"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="city" placeholder="City"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="state" placeholder="State"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="country" placeholder="Country"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="pincode" placeholder="Pincode"
+                             required>
+                    </mat-form-field>
+                    <div class="col-3">
+                      <button class="float-left" mat-fab-button color="primary" aria-label="Remove/clear"
+                              (click)="removeOrClearAddress(i)" matTooltip="Remove">
+                              <mat-icon>highlight_off</mat-icon>
+                          </button>
+                          <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add"
+                              (click)="addAddressFormGroup()" matTooltip="Add"><mat-icon>add_circle_outline</mat-icon></button>
+                              
+                    </div>
+                    
+              </div>
+              </div>
+          
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="dishesForm" label="Fill out dishes">
+            <form [formGroup]="dishesForm" (ngSubmit)="saveThirdStepData(dishesForm.value)">
+              <div formArrayName="form_array_dishes">
+                  <div class="row" *ngFor="let restaurant of form_array_dishes().controls;let i=index"
+                  [formGroupName]="i">
+                    <mat-form-field class="col-3">
+                      <input matInput formControlName="image" placeholder="Image path"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-3">
+                      <input matInput formControlName="name" placeholder="Name"
+                             required>
+                    </mat-form-field>
+      
+                    <mat-form-field class="col-3">
+                      <input matInput formControlName="price" placeholder="Price"
+                             required>
+                    </mat-form-field>
+                    
+                      <!-- <input matInput formControlName="isavail" placeholder="Is Available"
+                             required> -->
+                        <div class="col-3">
+                          <label>Is Available</label>
+                          <select class="form-select" formControlName="isavailable">
+                                
+                            <option [ngValue]=true>True</option>
+                            <option [ngValue]=false>False</option>
+                          </select>
+                        </div>
+                              
+                            
+                    
+                    <div class="col-3">
+                      <button class="float-left" mat-fab-button color="primary" aria-label="Remove/clear"
+                              (click)="removeOrClearDish(i)" matTooltip="Remove">
+                              <mat-icon>highlight_off</mat-icon>
+                          </button>
+                          <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add"
+                              (click)="addDishFormGroup()" matTooltip="Add"><mat-icon>add_circle_outline</mat-icon></button>
+                              
+                    </div>
+                    
+              </div>
+              </div>
+          
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+  </div>

@@ -1,0 +1,32 @@
+<div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body shadow">
+          <h3 class="card-title">CartID: {{current.id}}</h3>
+            <h4>Dishes</h4>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of current.dishes;let i=index">
+                    <th>{{i}}</th>
+                    <td>{{c.name}}</td>
+                    <td>{{current.count[i]}}</td>
+                    <td>{{c.price}}</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <th></th>
+                    <th></th>
+                    <th>{{current.amount}}</th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+</div>

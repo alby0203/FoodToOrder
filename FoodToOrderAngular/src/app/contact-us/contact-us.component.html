@@ -1,0 +1,53 @@
+<div class="row m-5" id="content">
+    <div class="m-2" style="width: 100%; height: 500px;">
+        <iframe class="class-md-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0965226693484!2d77.61138507595247!3d12.96567508734913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1681b488b7af%3A0x8cc6c53d26053814!2sTismo%20Technology%20Solutions!5e0!3m2!1sen!2sin!4v1697085876916!5m2!1sen!2sin" 
+    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+
+    </div>
+    
+    <div class="m-2">
+        <form [formGroup]="myform">
+            <div class="field m-2">
+                <label for="name" class="form-label">Name</label>
+                <input class="form-control" type="text"
+                    id="name"
+                    placeholder=""
+                    formControlName="name" [ngClass]="{'is-invalid':submitted && name.errors}">
+                <div *ngIf="!name.valid&&name.touched" style="color: red;" class="form_error">
+                        First Name is required</div>
+            </div>
+            <div class="field m-2">
+                <label for="email" class="form-label">Email</label>
+                <input class="form-control" type="email"
+                    id="email"
+                    placeholder=""
+                    formControlName="email" [ngClass]="{'is-invalid':submitted && email.errors}">
+                    <div *ngIf="!email.valid&&email.touched" style="color: red;" class="form_error">
+                        This field is required</div>
+            </div>
+            <div class="field m-2">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input class="form-control" type="text"
+                    id="mobile"
+                    placeholder=""
+                    formControlName="mobile" [ngClass]="{'is-invalid':submitted && mobile.errors}">
+                    <div *ngIf="!mobile.valid&&mobile.touched" style="color: red;" class="form_error">
+                        This field is required</div>
+            </div>
+            <div class="field m-2">
+                <label for="details" class="form-label">Details</label>
+                <input class="form-control" type="text"
+                    id="details"
+                    placeholder=""
+                    formControlName="details" [ngClass]="{'is-invalid':submitted && details.errors}">
+                    <div *ngIf="!details.valid&&details.touched" style="color: red;" class="form_error">
+                        This field is required</div>
+            </div>
+            <div class="field m-2">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+            </div>
+        </form>
+    </div>
+
+</div>

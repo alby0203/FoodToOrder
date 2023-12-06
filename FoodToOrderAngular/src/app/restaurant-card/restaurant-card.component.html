@@ -1,0 +1,13 @@
+    <div class="m-2" >
+        <img [src]="r.image" class="card-img-top img-responsive" height="250px" width="100%" alt="...">
+        <div class="card-body">
+          <h1 class="card-title text-center">{{r.name}}</h1>
+          <div class="d-flex justify-content-evenly">
+            <button class="btn btn-primary mx-2" (click)="onClick(r.id)">View Details</button>
+            <button *ngIf="role=='admin'" class="btn btn-primary" [appDeleteUser]="r.id" type="restaurant" (click)="removeRestaurant(r.id)">Delete</button>
+          </div>
+        </div>
+    </div>
+    
+
+

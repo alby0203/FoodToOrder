@@ -1,0 +1,47 @@
+<div class="container">
+    <mat-tab-group id="tab-group">
+        <mat-tab label="Users">
+            <mat-tab-group>
+                <mat-tab label="View Users"> 
+                    <app-user></app-user>
+                </mat-tab>
+                <mat-tab label="Add Users"> <app-sign-up></app-sign-up> </mat-tab>
+                <mat-tab label="Update Users"> <app-update-user></app-update-user> </mat-tab>
+                <mat-tab label="Filter User"> 
+                    <app-filter-user></app-filter-user>
+                </mat-tab>
+              </mat-tab-group>
+              
+        </mat-tab>
+        <mat-tab label="Restaurants"> 
+            <mat-tab-group >
+                <mat-tab label="View Restaurants" id="rest-view"> 
+                    <app-restaurants></app-restaurants>
+                </mat-tab>
+                <mat-tab label="Add Restaurants"><app-add-restaurant></app-add-restaurant>  </mat-tab>
+                <mat-tab label="Update Restaurants"> <app-update-restaurant></app-update-restaurant> </mat-tab>
+              </mat-tab-group>
+        </mat-tab>
+        <mat-tab label="Cart"> 
+            <mat-tab-group>
+                <mat-tab label="View Cart"> 
+                    <app-cart></app-cart>
+                </mat-tab>
+              </mat-tab-group>
+        </mat-tab>
+        <mat-tab label="Orders"> 
+            <mat-tab-group>
+                <mat-tab label="View Orders"> 
+                    <app-order></app-order>
+                </mat-tab>
+                <mat-tab label="Update Orders"> <app-update-order></app-update-order> </mat-tab>
+                <mat-tab label="Filter Orders"> 
+                    <app-fliter-order></app-fliter-order>
+                </mat-tab>
+              </mat-tab-group>
+        </mat-tab>
+
+    </mat-tab-group>
+      
+</div>
+

@@ -1,0 +1,24 @@
+<div class="m-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">User ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+        <th scope="col">Dishes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of orders;let i=index">
+        <th>{{c.id}}</th>
+        <th>{{c.userid}}</th>
+        <td>{{c.amount}}</td>
+        <td>{{c.date}}</td>
+        <td><button class="btn btn-primary" (click)="viewOrder(c.id)" >View Details</button></td>
+        <!-- <td><button class="btn btn-primary" (click)="removeOrder(c.id)">Remove</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+
+</div>

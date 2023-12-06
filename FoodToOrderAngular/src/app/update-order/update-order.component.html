@@ -1,0 +1,66 @@
+
+<div>
+    <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            
+            <form [formGroup]="firstFormGroup" (ngSubmit)="saveFirstStepData(firstFormGroup)">
+              
+              <label class="form-label" for="id"> Select a order for Update:</label>
+              <select class="form-select" id="id" formControlName="oid" (change)="onChangeType($event)">
+                  <option selected>Select a value</option>
+                  <option *ngFor="let u of arrOrder" [ngValue]="u.id">{{u.id}}</option>
+              </select>
+              
+              
+              <ng-template matStepLabel>Order Details</ng-template>
+              <mat-form-field class="m-3">
+                <mat-label>User ID</mat-label>
+                <input matInput formControlName="uid" readonly required>
+              </mat-form-field>
+              <mat-form-field class="m-3">
+                <mat-label>Order ID</mat-label>
+                <input matInput formControlName="oid" readonly required>
+              </mat-form-field>
+              <mat-form-field class="m-3">
+                <mat-label>Date and Time</mat-label>
+                <input matInput formControlName="dt" readonly required>
+              </mat-form-field>
+                <div>
+                  <button cmat-raised-button class="btn btn-primary" type="submit">Save</button>
+                  <button mat-button matStepperNext class="m-3">Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+          <mat-step [stepControl]="dishesForm" label="Fill out dishes">
+            <form [formGroup]="dishesForm" (ngSubmit)="saveThirdStepData(dishesForm.value)">
+              <div formArrayName="form_array_dishes">
+                  <div class="row" *ngFor="let restaurant of form_array_dishes().controls;let i=index"
+                  [formGroupName]="i">
+
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="name" placeholder="Name" readonly
+                             required>
+                    </mat-form-field>
+      
+                    <mat-form-field class="col-4">
+                      <input matInput formControlName="price" placeholder="Price" readonly
+                             required>
+                    </mat-form-field>
+                    <mat-form-field class="col-4">
+                        <input matInput formControlName="quantity" placeholder="Quantity"
+                               required>
+                      </mat-form-field>
+                    
+              </div>
+              </div>
+          
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+    </mat-stepper>
+</div>

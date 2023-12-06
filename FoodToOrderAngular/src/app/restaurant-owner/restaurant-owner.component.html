@@ -1,0 +1,14 @@
+<div class="row" id="content">
+    <div class="card m-2" style="width: 25rem;" *ngFor="let r of restList;let i=index">
+        <img [src]="r.image" class="card-img-top my-2" height="250px" width="100%" alt="...">
+        <div class="card-body">
+          <h1 class="card-title text-center">{{r.name}}</h1>
+          <div class="d-flex flex-column justify-content-around align-items-center">
+            <button class="btn btn-primary m-1" (click)="onClick(r.id)">View Details</button>
+            <button class="btn btn-primary m-1" (click)="updateRest(r.id)">Update Restaurant</button>
+            <button class="btn btn-primary m-1" (click)="removeRestaurant(i)">Delete</button>
+  
+          </div>
+        </div>
+      </div>
+</div>

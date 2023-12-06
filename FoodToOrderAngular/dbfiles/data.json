@@ -1,0 +1,529 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "image": "../../assets/images/bobs.jpg",
+      "name": "Bobsy",
+      "addresses": [
+        {
+          "id": 1,
+          "houseno": "1",
+          "street": "street1",
+          "area": null,
+          "city": "city1",
+          "state": "state1",
+          "country": "India",
+          "pincode": "12345"
+        }
+      ],
+      "dishes": [
+        {
+          "id": 1,
+          "image": "../../assets/images/biriyani.jpg",
+          "name": "biriyani",
+          "price": 450,
+          "isavailable": true
+        },
+        {
+          "id": 2,
+          "image": "../../assets/images/burger.jpg",
+          "name": "burger",
+          "price": 300,
+          "isavailable": true
+        },
+        {
+          "id": 3,
+          "image": "../../assets/images/dosa.jpg",
+          "name": "vada",
+          "price": 50,
+          "isavailable": true
+        }
+      ],
+      "ownerid": 1
+    },
+    {
+      "id": 2,
+      "image": "../../assets/images/emipre.webp",
+      "name": "Empire",
+      "addresses": [
+        {
+          "id": 1,
+          "houseno": 23,
+          "street": "1st Main",
+          "area": "Domlur",
+          "city": "banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "568668"
+        },
+        {
+          "id": 2,
+          "houseno": 25,
+          "street": "19th Main",
+          "area": "Indira nagar",
+          "city": "banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "560008"
+        }
+      ],
+      "dishes": [
+        {
+          "id": 1,
+          "image": "../../assets/images/dosa.jpg",
+          "name": "dosa",
+          "price": 80,
+          "isavailable": false
+        },
+        {
+          "id": 2,
+          "image": "../../assets/images/soup.jpg",
+          "name": "idli",
+          "price": 60,
+          "isavailable": true
+        }
+      ],
+      "ownerid": 2
+    },
+    {
+      "id": 3,
+      "image": "../../assets/images/bobs.jpg",
+      "name": "alby",
+      "addresses": [
+        {
+          "id": 1,
+          "houseno": "1",
+          "street": "street1",
+          "area": "",
+          "city": "city1",
+          "state": "state1",
+          "country": "India",
+          "pincode": "12345"
+        },
+        {
+          "id": 2,
+          "houseno": "1",
+          "street": "hal",
+          "area": "",
+          "city": "banga",
+          "state": "karna",
+          "country": "India",
+          "pincode": "686513"
+        },
+        {
+          "id": 3,
+          "houseno": "1",
+          "street": "1",
+          "area": "1",
+          "city": "1",
+          "state": "1",
+          "country": "1",
+          "pincode": "1"
+        }
+      ],
+      "dishes": [
+        {
+          "id": 1,
+          "image": "../../assets/images/dosa.jpg",
+          "name": "dosa",
+          "price": 90,
+          "isavailable": true
+        },
+        {
+          "id": 2,
+          "image": "../../assets/images/soup.jpg",
+          "name": "vada",
+          "price": 15,
+          "isavailable": true
+        }
+      ],
+      "ownerid": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Hugh",
+      "role": "admin",
+      "dob": "02/03/2001",
+      "email": "john@gmail.com",
+      "password": "john123",
+      "address": {
+        "id": 1,
+        "houseno": 11,
+        "street": "1st Main",
+        "area": "Domlur",
+        "city": "banglore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": "568668"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Jill",
+      "lastName": "Mark",
+      "role": "restaurant_owner",
+      "dob": "03/03/2001",
+      "email": "jill@gmail.com",
+      "password": "jill123",
+      "address": {
+        "id": 1,
+        "houseno": 22,
+        "street": "1st Main",
+        "area": "Domlur",
+        "city": "banglore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": "568668"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "James",
+      "lastName": "Dent",
+      "role": "restaurant_owner",
+      "dob": "04/03/2001",
+      "email": "james@gmail.com",
+      "password": "james123",
+      "address": {
+        "id": 1,
+        "houseno": 33,
+        "street": "1st Main",
+        "area": "Domlur",
+        "city": "banglore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": "568668"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "alby",
+      "lastName": "joseph",
+      "role": "user",
+      "dob": "02/03/2001",
+      "email": "fasdk",
+      "password": "123",
+      "address": {
+        "id": 1,
+        "houseno": "1",
+        "street": "ty",
+        "area": "yt",
+        "city": "ty",
+        "state": "tty",
+        "country": "fdsaf",
+        "pincode": "iu"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "asd",
+      "lastName": "sdfa",
+      "role": "user",
+      "dob": "dsf",
+      "email": "fsd",
+      "password": "123",
+      "address": {
+        "id": 1,
+        "houseno": "sdf",
+        "street": "fdsa",
+        "area": "fda",
+        "city": "fdsda",
+        "state": "fsdas",
+        "country": "ds",
+        "pincode": "fsad"
+      }
+    },
+    {
+      "id": 6,
+      "firstName": "asd",
+      "lastName": "sdfa",
+      "role": "user",
+      "dob": "dsf",
+      "email": "fsd",
+      "password": "123",
+      "address": {
+        "id": 1,
+        "houseno": "sdf",
+        "street": "fdsa",
+        "area": "fda",
+        "city": "fdsda",
+        "state": "fsdas",
+        "country": "ds",
+        "pincode": "fsad"
+      }
+    },
+    {
+      "id": 7,
+      "firstName": "ads",
+      "lastName": "dsf",
+      "role": "user",
+      "dob": "dsfa",
+      "email": "gsdfg",
+      "password": "456",
+      "address": {
+        "id": 1,
+        "houseno": "sdfasg",
+        "street": "gsa",
+        "area": "gsfg",
+        "city": "gsfg",
+        "state": "dsffg",
+        "country": "gsdfg",
+        "pincode": "gs"
+      }
+    },
+    {
+      "id": 8,
+      "firstName": "fdsg",
+      "lastName": "gdfs",
+      "role": "user",
+      "dob": "dfsg",
+      "email": "dsfg",
+      "password": "789",
+      "address": {
+        "id": 1,
+        "houseno": "gdfsg",
+        "street": "gsd",
+        "area": "gsdfg",
+        "city": "sdf",
+        "state": "gdfsg",
+        "country": "dsffg",
+        "pincode": "gsdfg"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "date": "10/18/2023, 2:08:16 PM",
+      "amount": 2605,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "amount": 2605,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "some",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          },
+          {
+            "id": 2,
+            "image": "some",
+            "name": "burger",
+            "price": 300,
+            "isavailable": true
+          },
+          {
+            "id": 3,
+            "image": "street1",
+            "name": "vada",
+            "price": 50,
+            "isavailable": true
+          },
+          {
+            "id": 1,
+            "image": "../../assets/images/dosa.jpg",
+            "name": "dosa",
+            "price": 90,
+            "isavailable": true
+          },
+          {
+            "id": 2,
+            "image": "some",
+            "name": "vada",
+            "price": 15,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          4,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "date": "10/18/2023, 2:10:01 PM",
+      "amount": 2250,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "amount": 2250,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "some",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          5
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "date": "10/19/2023, 8:47:06 AM",
+      "amount": 950,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "amount": 950,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "some",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          },
+          {
+            "id": 3,
+            "image": "street1",
+            "name": "vada",
+            "price": 50,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "date": "10/20/2023, 9:37:01 AM",
+      "amount": 900,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "amount": 900,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "../../assets/images/biriyani.jpg",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          2
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "date": "10/20/2023, 9:46:23 AM",
+      "amount": 1800,
+      "userid": 2,
+      "cart": {
+        "id": 2,
+        "amount": 1800,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "../../assets/images/biriyani.jpg",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          },
+          {
+            "id": 2,
+            "image": "../../assets/images/burger.jpg",
+            "name": "burger",
+            "price": 300,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "date": "10/26/2023, 9:47:45 AM",
+      "amount": 1050,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "amount": 1050,
+        "dishes": [
+          {
+            "id": 1,
+            "image": "../../assets/images/biriyani.jpg",
+            "name": "biriyani",
+            "price": 450,
+            "isavailable": true
+          },
+          {
+            "id": 3,
+            "image": "../../assets/images/dosa.jpg",
+            "name": "vada",
+            "price": 50,
+            "isavailable": true
+          }
+        ],
+        "count": [
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "dishes": [
+    {
+      "id": 1001,
+      "image": "",
+      "name": "biriyani",
+      "isavailable": true,
+      "price": 450
+    },
+    {
+      "id": 1002,
+      "image": "",
+      "name": "burger",
+      "isavailable": true,
+      "price": 300
+    }
+  ],
+  "carts": [
+    {
+      "id": 3,
+      "amount": 0,
+      "dishes": [],
+      "count": []
+    },
+    {
+      "id": 1,
+      "amount": 0,
+      "dishes": [],
+      "count": []
+    },
+    {
+      "id": 2,
+      "amount": 0,
+      "dishes": [],
+      "count": []
+    },
+    {
+      "id": 4,
+      "amount": 0,
+      "dishes": [],
+      "count": []
+    }
+  ]
+}

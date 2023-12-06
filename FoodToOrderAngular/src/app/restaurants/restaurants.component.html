@@ -1,0 +1,36 @@
+<!-- <div class="m-2">
+    {{restDetails.id}} {{restDetails.name}}
+        <button class="btn btn-primary">View More</button>
+ 
+    
+    <div *ngFor="let a of restDetails.addresses">
+        {{a.id}} {{a.houseno}} {{a.street}} 
+    </div>
+</div> -->
+<div class="restaurant-cards d-flex flex-column justify-content-between ">
+    <div class="row" id="content"> 
+        <div class="card m-2 shadow rounded" style="width: 25rem;" *ngFor="let r of currentItemsToShow;let i=index">
+            <app-restaurant-card [resta]='r' (unavail)="setAvailable($event,i)"></app-restaurant-card>
+            <div>
+                <p *ngIf="this.countunavail[i]>0" class="text-center stock" >No of unavailable dishes: {{this.countunavail[i]}}</p>
+            </div>
+            <!-- <img [src]="r.image" class="card-img-top"  alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{r.name}}</h5>
+              <button class="btn btn-primary" (click)="onClick(r.id)">View Details</button>
+              <button *ngIf="role=='admin'" class="btn btn-primary m-3" (click)="removeRestaurant(i)">Delete</button>
+            </div> -->
+          </div>
+    </div>
+    <div id="pagination" class="row">
+        <mat-paginator style="background-color: #8ee4af; color: #05386b; font-size: 16px; font-weight: 500;"
+    (page)="onPageChange($event)"
+    [length]="restList.length"
+                  [pageSize]="2"
+                  [pageSizeOptions]="[1,2,3,4]">
+    </mat-paginator>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,33 @@
+<div class="m-3 d-flex justify-content-center">
+    <div class="card" style="width: 30rem;">
+        <img [src]="current.image" class="card-img-top" alt="...">
+        <div class="card-body p-3">
+          <h1 class="card-title">{{current.name}}</h1>
+          <h2>Menu</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Add</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of current.dishes;let i=index">
+                <th>{{c.id}}</th>
+                <td>{{c.name}}</td>
+                <td><img [ngClass]="{avail:!c.isavailable}" [src]="c.image" alt="no image" height="40px" width="60px"></td>
+                <td>{{c.price}}</td>
+                <td><button *ngIf="current_role!='invalid credentials'" type="button" class="btn btn-outline-primary" [ngClass]="{'disabled':!c.isavailable}" (click)="addToCart(c.id)">+</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Addresses</h2>
+          <h4 *ngFor="let a of current.addresses">
+            {{a.houseno}} {{a.street}} {{a.city}} {{a.pincode}}
+          </h4>
+        </div>
+      </div>
+</div>

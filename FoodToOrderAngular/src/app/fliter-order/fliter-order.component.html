@@ -1,0 +1,57 @@
+<div>
+
+    <form [formGroup]="filterOrder" (ngSubmit)="onSubmit(filterOrder.value)">
+        
+        <div class="row">
+            <div class="field mb-3 col">
+                <label for="startdate" class="form-label">Start Date</label>
+                <input class="form-control" type="text"
+                    id="startdate"
+                    placeholder=""
+                    formControlName="startdate">
+                <div *ngIf="!startdate.valid&&startdate.touched" style="color: red;" class="form_error">
+                        Start Date is required</div>
+            </div>
+            <div class="field mb-3 col">
+                <label for="enddate" class="form-label">Start Date</label>
+                <input class="form-control" type="text"
+                    id="enddate"
+                    placeholder=""
+                    formControlName="enddate">
+                <div *ngIf="!enddate.valid&&enddate.touched" style="color: red;" class="form_error">
+                        End Date is required</div>
+            </div>
+
+        </div>
+
+        <div>
+            
+        <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div>
+        <div class="m-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">User ID</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of orderList;let i=index">
+                  <th>{{c.id}}</th>
+                  <th>{{c.userid}}</th>
+                  <td>{{c.amount}}</td>
+                  <td>{{c.date}}</td>
+                </tr>
+              </tbody>
+            </table>
+          
+          </div>
+    </div>
+
+</div>

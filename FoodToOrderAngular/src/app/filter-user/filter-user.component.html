@@ -1,0 +1,49 @@
+<div>
+
+    <form [formGroup]="filterUser" (ngSubmit)="onSubmit(filterUser.value)">
+        
+        <div class="row">
+            <div class="field mb-3 col">
+                <label for="area" class="form-label">Enter Area</label>
+                <input class="form-control" type="text"
+                    id="area"
+                    placeholder=""
+                    formControlName="area">
+                <div *ngIf="!area.valid&&area.touched" style="color: red;" class="form_error">
+                        Area is required</div>
+            </div>
+
+
+        </div>
+
+        <div>
+            
+        <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div>
+        <div class="m-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">User ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Area</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of userList;let i=index">
+                  <th>{{c.id}}</th>
+                  <th>{{c.firstName}}</th>
+                  <th>{{c.address.area}}</th>
+                  <td>{{c.email}}</td>
+                </tr>
+              </tbody>
+            </table>
+          
+          </div>
+    </div>
+
+</div>

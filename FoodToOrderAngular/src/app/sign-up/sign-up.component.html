@@ -1,0 +1,150 @@
+<form [formGroup]="signupForm"
+            (ngSubmit)="onSubmit(signupForm.value)" [class.error]="!signupForm.valid&&signupForm.touched">
+            
+            <div class="row">
+                <div class="field col">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input class="form-control" type="text"
+                        id="firstname"
+                        placeholder=""
+                        formControlName="firstname" [ngClass]="{'is-invalid':submitted && firstname.errors}">
+                    <div *ngIf="!firstname.valid&&firstname.touched" style="color: red;" class="form_error">
+                            First Name is required</div>
+                </div>
+                <div class="field col">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input class="form-control" type="text"
+                        id="lastname"
+                        placeholder=""
+                        formControlName="lastname" >
+                </div>
+            </div>
+            
+
+            <div class="field">
+                <label for="dob" class="form-label">Date Of Birth</label>
+                <input class="form-control" type="text"
+                    id="dob"
+                    placeholder=""
+                    formControlName="dob" [ngClass]="{'is-invalid':submitted && dob.errors}">
+                    <div *ngIf="!dob.valid&&dob.touched" style="color: red;" class="form_error">
+                        Date Of Birth is required</div>
+            </div>
+
+            
+            <div class="row">
+                <div class="field col">
+                    <label for="hno" class="form-label">House Number</label>
+                    <input class="form-control" type="text"
+                        id="hno"
+                        placeholder=""
+                        formControlName="hno" [ngClass]="{'is-invalid':submitted && hno.errors}">
+                        <div *ngIf="!hno.valid&&hno.touched" style="color: red;" class="form_error">
+                            House Number is required</div>
+                </div>
+                <div class="field col">
+                    <label for="st" class="form-label">Street</label>
+                    <input class="form-control" type="text"
+                        id="st"
+                        placeholder=""
+                        formControlName="street" [ngClass]="{'is-invalid':submitted && street.errors}">
+                        <div *ngIf="!street.valid&&street.touched" style="color: red;" class="form_error">
+                            Street is required</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field col">
+                    <label for="area" class="form-label">Area</label>
+                    <input class="form-control" type="text"
+                        id="area"
+                        placeholder=""
+                        formControlName="area" [ngClass]="{'is-invalid':submitted && area.errors}">
+                        <div *ngIf="!area.valid&&area.touched" style="color: red;" class="form_error">
+                            Area is required</div>
+                </div>
+                <div class="field col">
+                    <label for="city" class="form-label">City</label>
+                    <input class="form-control" type="text"
+                        id="city"
+                        placeholder=""
+                        formControlName="city" [ngClass]="{'is-invalid':submitted && city.errors}">
+                        <div *ngIf="!city.valid&&city.touched" style="color: red;" class="form_error">
+                            City is required</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="field col">
+                    <label for="state" class="form-label">State</label>
+                    <input class="form-control" type="text"
+                        id="state"
+                        placeholder=""
+                        formControlName="state" [ngClass]="{'is-invalid':submitted && state.errors}">
+                        <div *ngIf="!state.valid&&state.touched" style="color: red;" class="form_error">
+                            State is required</div>
+                </div>
+                <div class="field col">
+                    <label for="country" class="form-label">Country</label>
+                    <input class="form-control" type="text"
+                        id="country"
+                        placeholder=""
+                        formControlName="country" [ngClass]="{'is-invalid':submitted && country.errors}">
+                        <div *ngIf="!country.valid&&country.touched" style="color: red;" class="form_error">
+                            Country is required</div>
+                </div>
+            </div>
+
+            
+            <div class="field">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input class="form-control" type="text"
+                    id="pincode"
+                    placeholder=""
+                    formControlName="pincode" [ngClass]="{'is-invalid':submitted && pincode.errors}">
+                    <div *ngIf="!pincode.valid&&pincode.touched" style="color: red;" class="form_error">
+                        Pincode is required</div>
+            </div>
+
+
+
+              <div class="field">
+                <label for="emailid" class="form-label">Email</label>
+                <input class="form-control" type="email"
+                    id="emailid"
+                    placeholder=""
+                    formControlName="email" [ngClass]="{'is-invalid':submitted && email.errors}">
+                    <div *ngIf="!email.valid&&email.touched" style="color: red;" class="form_error">
+                        This field is required</div>
+            </div>
+            <div class="field">
+              <label for="userpassword" class="form-label">Password</label>
+              <input class="form-control"
+                type="password"
+                  id="userpassword"
+                  placeholder=""
+                  formControlName="passwd" [ngClass]="{'is-invalid':submitted && passwd.errors}">
+                  <div *ngIf="!passwd.valid&&passwd.touched" style="color: red;" class="form_error">
+                    This field is required</div>
+          </div>
+          <div class="field">
+            <label for="userpasswordc" class="form-label">Confirm Password</label>
+            <input class="form-control"
+              type="password"
+                id="userpasswordc"
+                placeholder=""
+                formControlName="passwdc" [ngClass]="{'is-invalid':submitted && passwdc.errors}">
+                <div *ngIf="passwdc.hasError('required')&&passwdc.touched" style="color: red;" class="form_error">
+                    This field is required</div>
+                    <div *ngIf="passwdc.hasError('noMatch')" style="color: red;" class="form_error">
+                        Passwords doesnt match</div>
+        </div>
+
+            <div class="modal-footer m-1">
+                
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary do-button">Submit</button>
+            </div>
+            <div *ngIf="!signupForm.valid&&signupForm.touched" style="color: red;" class="form_error">
+                Form Invalid</div>
+</form>

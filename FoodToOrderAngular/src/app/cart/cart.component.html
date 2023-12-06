@@ -1,0 +1,23 @@
+<div class="m-3">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Dishes</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cart;let i=index">
+        <th>{{c.id}}</th>
+        <td>{{c.amount}}</td>
+        <td><button class="btn btn-primary" (click)="viewCart(c.id)" >View Details</button></td>
+        <td><button class="btn btn-primary" (click)="removeCart(c.id)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

@@ -1,0 +1,24 @@
+#main_container{
+    min-height: 100%;
+}
+
+#footer{
+    height: 10vh;
+    background-color: #379683;
+    padding-top: 15px;
+}
+#banner{
+    min-height: 8vh;
+    background-color: #8ee4af;
+}
+
+
+#content{
+    min-height: 82vh;
+    min-width: 350px;
+    background-color: #8ee4af;
+}
+
+html,body{
+    height: 100vh;
+}
