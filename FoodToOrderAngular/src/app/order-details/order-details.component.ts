@@ -17,7 +17,7 @@ export class OrderDetailsComponent {
     this.activatedRoute.params.subscribe((params:Params)=>{
       let id=params['oid'];
       //this.current=orderService.getOrderbyId(id)
-      orderService.getOrderbyId(id).subscribe(data=>{
+      orderService.getOrderbyId(id).subscribe((data: Order)=>{
         this.current=data
       })
     })

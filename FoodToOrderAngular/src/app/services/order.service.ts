@@ -64,7 +64,7 @@ export class OrderService {
   filterOrder(start:string,end:string):Order[]{
     let arrOrders:Order[]=[]
     let resOrders:Order[]=[]
-    this.getOrders().subscribe(data=>{
+    this.getOrders().subscribe((data: Order[])=>{
       arrOrders=data
       console.log(arrOrders)
       let startDate=new Date(start)
